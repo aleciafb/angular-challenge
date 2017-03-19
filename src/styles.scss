@@ -1,3 +1,11 @@
-$brand-primary: red;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+$brand-primary: #df3f51;
+$brand-success: #87c332;
+$brand-info:    #2594c7;
+$brand-warning: #FBB03B;
+$brand-danger:  #D4145A;
+
+$font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss"
