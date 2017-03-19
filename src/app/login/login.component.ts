@@ -8,6 +8,7 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./login.component.css'],
   providers: [AuthenticationService]
 })
+
 export class LoginComponent implements OnInit {
   model: any = {};
 
