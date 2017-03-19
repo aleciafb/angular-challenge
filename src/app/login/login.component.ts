@@ -19,8 +19,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.authenticationService.login(this.model.username, this.model.password).subscribe(result => {
       if (result === true) {
-        alert('done')
-          this.router.navigateByUrl('/projects');
+        this.router.navigateByUrl('/projects');
       } else {
         console.log('YOU SHALL NOT ENTER')
       }

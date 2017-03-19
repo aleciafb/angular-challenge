@@ -9,7 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 const appRoutes: Routes = [
-  { path: '', component: LoginComponent }
+  { path: '', component: LoginComponent },
+  { path: 'projects', component: ProjectsComponent }
 ]
 
 @NgModule({
