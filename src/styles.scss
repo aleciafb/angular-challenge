@@ -15,4 +15,15 @@ $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
   }
 }
 
+.card {
+  margin-bottom: 1em;
+  h3 {
+    display: inline;
+  }
+  .badge {
+    float: right;
+    margin-left: 0.5em;
+  }
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss"

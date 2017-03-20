@@ -21,5 +21,4 @@ export class ProjectsComponent implements OnInit {
       this.projects = result;
     });
   }
-
 }

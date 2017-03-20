@@ -1,3 +1,38 @@
-<p>
-  project works!
-</p>
+<div *ngIf="project">
+  <div class="card" >
+    <div class="card-block">
+      <div class="card-title">
+        <h3>{{project.title}}</h3>
+        <span *ngIf="project.is_active" class="badge badge-success">Active</span>
+        <span *ngIf="!project.is_active" class="badge badge-default">Inactive</span>
+        <span *ngIf="project.is_billable" class="badge badge-info">Billable</span>
+      </div>
+
+      <p class="card-text">{{project.description}}</p>
+      <hr>
+      <p><b>Start Date:</b> {{project.start_date | date}}</p>
+      <p><b>End Date:</b> {{project.end_date | date}}</p>
+    </div>
+    <div class="card-footer">
+      <h5>Tasks</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th># id</th>
+            <th>Title</th>
+            <th>Due Date</th>
+            <th>Estimated Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of project.task_set">
+            <th scope="row">{{task.id}}</th>
+            <td>{{task.title}}</td>
+            <td>{{task.due_date | date}}</td>
+            <td>{{task.estimated_hours}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
