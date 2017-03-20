@@ -1,3 +1,9 @@
-h1 {
+header {
   margin: 1em 0;
+  h1 {
+    display: inline;
+  }
+  .btn {
+    float: right;
+  }
 }

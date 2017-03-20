@@ -1,5 +1,7 @@
-<h1>Projects</h1>
-<a [routerLink]="['/project/new']" class="btn btn-primary">New Project</a>
+<header>
+  <h1>Projects</h1>
+  <a [routerLink]="['/project/new']" class="btn btn-primary">New Project</a>
+</header>
 <div class="card" *ngFor="let project of projects">
   <div class="card-block">
     <div class="card-title">
@@ -13,6 +15,6 @@
     <hr>
     <p><b>Start Date:</b> {{project.start_date | date}}</p>
     <p><b>End Date:</b> {{project.end_date | date}}</p>
-    <a [routerLink]="[project.pk]" class="btn btn-primary">View Tasks</a>
+    <a [routerLink]="[project.pk]" class="btn btn-primary">See more</a>
   </div>
 </div>
