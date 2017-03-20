@@ -1,8 +1,17 @@
-<p>
-  projects works!
-</p>
-<ul>
-  <li *ngFor="let project of projects">
-    {{project["title"]}}
-  </li>
-</ul>
+<h1>Projects</h1>
+<div class="card" *ngFor="let project of projects">
+  <div class="card-block">
+    <div class="card-title">
+      <h3>{{project.title}}</h3>
+      <span *ngIf="project.is_active" class="badge badge-success">Active</span>
+      <span *ngIf="!project.is_active" class="badge badge-default">Inactive</span>
+      <span *ngIf="project.is_billable" class="badge badge-info">Billable</span>
+    </div>
+
+    <p class="card-text">{{project.description}}</p>
+    <hr>
+    <p><b>Start Date:</b> {{project.start_date | date}}</p>
+    <p><b>End Date:</b> {{project.end_date | date}}</p>
+    <a href="#" class="btn btn-primary">View Tasks</a>
+  </div>
+</div>
