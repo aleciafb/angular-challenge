@@ -34,9 +34,9 @@ export class ProjectsService {
 
   }
 
-  newProduct() {
+  newProduct(model) {
     let url =  `${this.baseUrl}/projects/`;
-    let body = {"title": "Test Title", "description": "Test Description", "start_date": new Date().toJSON().slice(0, 10)}
+    let body = model;
 
     return this.http.post(url, body , this.getOptions())
       .map(this.extractData)

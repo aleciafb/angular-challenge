@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { ProjectsService } from '../projects.service';
 
 @Component({
@@ -9,11 +9,19 @@ import { ProjectsService } from '../projects.service';
   providers: [ProjectsService]
 })
 export class ProjectNewComponent implements OnInit {
+  model: any = {};
 
-  constructor(private projectsService: ProjectsService) { }
+  constructor(private projectsService: ProjectsService, private router: Router) { }
 
   ngOnInit() {
-    this.projectsService.newProduct().subscribe(result => {
+    this.model.is_active   = false;
+    this.model.is_billable = false;
+
+  }
+
+  createProject() {
+    this.projectsService.newProduct(this.model).subscribe(result => {
+      this.router.navigateByUrl('/projects');
     });
   }
 }
