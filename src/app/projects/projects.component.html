@@ -1,20 +1,23 @@
-<header>
-  <h1>Projects</h1>
-  <a [routerLink]="['/project/new']" class="btn btn-primary">Add new Project</a>
-</header>
-<div class="card" *ngFor="let project of projects">
-  <div class="card-block">
-    <div class="card-title">
-      <h3>{{project.title}}</h3>
-      <span *ngIf="project.is_active" class="badge badge-success">Active</span>
-      <span *ngIf="!project.is_active" class="badge badge-default">Inactive</span>
-      <span *ngIf="project.is_billable" class="badge badge-info">Billable</span>
-    </div>
+<div class="card-container">
+  <header>
+    <h1>Projects</h1>
+    <a [routerLink]="['/project/new']" class="btn btn-primary">Add new Project</a>
+  </header>
+  <hr>
+  <div class="card" *ngFor="let project of projects">
+    <div class="card-block">
+      <div class="card-title">
+        <h3>{{project.title}}</h3>
+        <span *ngIf="project.is_active" class="badge badge-success">Active</span>
+        <span *ngIf="!project.is_active" class="badge badge-default">Inactive</span>
+        <span *ngIf="project.is_billable" class="badge badge-info">Billable</span>
+      </div>
 
-    <p class="card-text">{{project.description}}</p>
-    <hr>
-    <p><b>Start Date:</b> {{project.start_date | date}}</p>
-    <p><b>End Date:</b> {{project.end_date | date}}</p>
-    <a [routerLink]="[project.pk]" class="btn btn-primary">See more</a>
+      <p class="card-text">{{project.description}}</p>
+      <hr>
+      <p><b>Start Date:</b> {{project.start_date | date}}</p>
+      <p><b>End Date:</b> {{project.end_date | date}}</p>
+      <a [routerLink]="[project.pk]" class="btn btn-primary">See more</a>
+    </div>
   </div>
 </div>
